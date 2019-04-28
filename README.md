@@ -4,7 +4,7 @@
 # APP Flow Mirror
 It's a tool to recognize running apps in smartphone and IoT devices in LAN realtime.
 ## example
-<video src="example/app flow mirror.mp4"></video>
+![app flow mirror.gif](example/app flow mirror.gif)
 ## how to use
 - start up your raspberry pi
 - plug a Wireless network adapter on raspberry pi
