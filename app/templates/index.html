@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>{{ title }}</title>
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/buttons.css') }}">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style type="text/css">
+    a:link,
+    a:visited {
+        text-decoration: none;
+        /*超链接无下划线*/
+    }
+	#loading{
+            width: 80px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top:100px;
+        }
+        #loading span{
+            display: inline-block;
+            width: 8px;
+            height: 100%;
+            border-radius: 4px;
+            background: lightgreen;
+            -webkit-animation: load 1s ease infinite;
+        }
+        @-webkit-keyframes load{
+            0%,100%{
+                height: 40px;
+                background: lightgreen;
+            }
+            50%{
+                height: 70px;
+                margin: -15px 0;
+                background: lightblue;
+            }
+        }
+        #loading span:nth-child(2){
+            -webkit-animation-delay:0.2s;
+        }
+        #loading span:nth-child(3){
+            -webkit-animation-delay:0.4s;
+        }
+        #loading span:nth-child(4){
+            -webkit-animation-delay:0.6s;
+        }
+        #loading span:nth-child(5){
+            -webkit-animation-delay:0.8s;
+        }
+</style>
+<script>
+function loadingdis(aa){
+	aa.disabled = "true";
+	aa.innerHTML = "Please wait a minute"
+    var oDiv=document.getElementById('loading');
+    oDiv.style['display']='block';
+}
+</script>
+</head>
+
+<body>
+    <a href="/">
+        <h1 align="center" style="font-size:50px">APP Flow Mirror</h1>
+    </a>
+    <div style="text-align:center"><a href="/startscan">
+	<button id="button" class="btn btn-primary btn-lg btn-block" style="height: 50px; width: 200px" onclick="loadingdis(this)" style="display:none" >Start Scan</button></a></div>
+<div id="loading", style="display:none">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+</div>
+</body>
+
+</html>
